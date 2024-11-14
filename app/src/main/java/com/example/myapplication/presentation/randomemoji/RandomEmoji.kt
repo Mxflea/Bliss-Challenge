@@ -1,8 +1,9 @@
-package com.example.myapplication.presentation.home
+package com.example.myapplication.presentation.randomemoji
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -18,12 +19,15 @@ import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.myapplication.presentation.theme.BlueEmoji
 
 @Composable
-fun Home(modifier: Modifier = Modifier.background(BlueEmoji)) {
+fun RandomEmoji(
+    modifier: Modifier = Modifier.background(BlueEmoji)
+) {
     Column(
         modifier = modifier
             .fillMaxWidth()
@@ -35,13 +39,12 @@ fun Home(modifier: Modifier = Modifier.background(BlueEmoji)) {
         Image(
             imageVector = Icons.Default.Star, contentDescription = ""
         )
-        
-        Button(
-            onClick = { TODO() },
+
+        ButtonGray(
+            label = "RANDOM EMOJI",
+            onClick = {  },
             modifier = Modifier.width(160.dp)
-        ) {
-            Text(text = "RANDOM EMOJI")
-        }
+        )
 
         Button(
             onClick = { TODO() },
@@ -83,8 +86,25 @@ fun Home(modifier: Modifier = Modifier.background(BlueEmoji)) {
     }
 }
 
+@Composable
+fun ButtonGray(
+    label:String,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+){
+    Box(modifier = modifier.background(Color(0xFFD6D7D7))){
+        Text("RANDOM EMOJI")
+    }
+}
+
+@Composable
+@Preview
+fun ButtonGrayPreview(){
+    ButtonGray("RANDOM EMOJO", {})
+}
+
 @Preview(showSystemUi = true)
 @Composable
 private fun HomePreview() {
-    Home()
+    RandomEmoji()
 }
