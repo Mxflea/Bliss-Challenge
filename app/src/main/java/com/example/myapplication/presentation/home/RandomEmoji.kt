@@ -50,8 +50,6 @@ fun Home(modifier: Modifier = Modifier.background(BlueEmoji)) {
             Text(text = "EMOJI LIST")
         }
 
-
-
         Column(
             modifier = Modifier
                 .fillMaxWidth()
