@@ -1,5 +1,5 @@
 package com.example.myapplication.data.repository
 
-interface Repository {
+interface RandomEmojiRepository {
     fun getList()
 }

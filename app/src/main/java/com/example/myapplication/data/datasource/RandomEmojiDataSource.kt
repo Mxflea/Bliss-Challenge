@@ -1,5 +1,5 @@
 package com.example.myapplication.data.datasource
 
-interface DataSource {
+interface RandomEmojiDataSource {
     fun getList()
 }

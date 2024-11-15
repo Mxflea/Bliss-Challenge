@@ -1,10 +1,10 @@
 package com.example.myapplication.presentation.randomemoji
 
 import androidx.lifecycle.ViewModel
-import com.example.myapplication.data.repository.Repository
+import com.example.myapplication.data.repository.RandomEmojiRepository
 
 class RandomEmojiViewModel(
-    val repository: Repository
+    val repository: RandomEmojiRepository
 ):ViewModel() {
 
 }

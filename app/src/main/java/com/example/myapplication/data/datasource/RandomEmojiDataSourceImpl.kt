@@ -1,6 +1,6 @@
 package com.example.myapplication.data.datasource
 
-class DataSourceImpl : DataSource {
+class RandomEmojiDataSourceImpl : RandomEmojiDataSource {
     override fun getList() {
 
     }
