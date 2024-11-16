@@ -2,21 +2,32 @@ package com.example.myapplication.presentation.randomemoji
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.myapplication.data.model.Emoji
 import com.example.myapplication.data.repository.randomemoji.RandomEmojiRepository
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class RandomEmojiViewModel(
-    val repository: RandomEmojiRepository
+    private val repository: RandomEmojiRepository,
 ) : ViewModel() {
-    fun teste(){
+
+    private var _uiState: MutableStateFlow<RandomEmojiUiState> =
+        MutableStateFlow(RandomEmojiUiState())
+    val uiState = _uiState
+
+    init {
         viewModelScope.launch {
-            repository.getList()
+            val result = repository.getList()
+            _uiState.update { uiState ->
+                uiState.copy(emojiList = result)
+            }
         }
     }
+
 }
 
 
-
-data class Pessoa(
-    val nome:String
+data class RandomEmojiUiState(
+    val emojiList: List<Emoji> = emptyList()
 )

@@ -1,41 +1,40 @@
 package com.example.myapplication.presentation.randomemoji
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
-import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 import com.example.myapplication.presentation.theme.BlueEmoji
-import org.koin.androidx.compose.koinViewModel
+import com.example.myapplication.presentation.theme.MyApplicationTheme
 
 @Composable
-fun RandomEmoji(
+fun RandomEmojiScreen(
+    uiState: RandomEmojiUiState = RandomEmojiUiState(),
     modifier: Modifier = Modifier.background(BlueEmoji),
 ) {
-    val viewModel: RandomEmojiViewModel = koinViewModel()
 
-    LaunchedEffect(Unit) {
-        viewModel.teste()
-    }
+    val list = emptyList<String>()
 
     Column(
         modifier = modifier
@@ -46,64 +45,76 @@ fun RandomEmoji(
         verticalArrangement = Arrangement.Center
     ) {
 
-        Column(
+        AsyncImage(
+            model = if (uiState.emojiList.isNotEmpty()) {
+                uiState.emojiList.random().url
+            } else {
+                ""
+            },
+            modifier = Modifier.width(80.dp),
+            contentDescription = null,
+        )
+
+        ButtonGray(
+            label = if (list.isNotEmpty()) "RANDOM EMOJI" else "GET EMOJI",
+            onClick = { },
             modifier = Modifier
-                .fillMaxWidth()
-                .padding(30.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+                .width(160.dp)
+                .padding(top = 12.dp)
+        )
+
+        ButtonGray(
+            label = "EMOJI LIST",
+            onClick = { },
+            modifier = Modifier
+                .width(160.dp)
+                .padding(top = 12.dp)
+        )
+
+        Box(
+            modifier = Modifier
+                .width(250.dp)
+                .padding(top = 12.dp),
         ) {
-
-            Image(
-                imageVector = Icons.Default.Star, contentDescription = ""
-            )
-
-            ButtonGray(
-                label = "RANDOM EMOJI",
-                onClick = { },
-                modifier = Modifier.width(160.dp)
-            )
-
-            ButtonGray(
-                label = "EMOJI LIST",
-                onClick = { },
-                modifier = Modifier.width(160.dp)
-            )
-
-            Row {
-                TextField(
-                    value = "",
-                    onValueChange = {},
-                    modifier = Modifier
-                        .weight(4f)
-                        .width(350.dp),
-                    colors = TextFieldDefaults.colors(
-                        unfocusedContainerColor = Color.Transparent
-                    ),
-                    placeholder = {
-                        Text(text = "insert github username", color = Color.Red)
-                    }
-                )
-                ButtonGray(
-                    label = "",
-                    onClick = { },
-                    modifier = Modifier.weight(1f)
-                )
-            }
-
+            TextField(value = "",
+                onValueChange = {},
+                colors = TextFieldDefaults.colors(
+                    unfocusedContainerColor = Color.Transparent
+                ),
+                placeholder = {
+                    Text(
+                        text = "insert github username",
+                        fontSize = 12.sp,
+                        color = Color.Red
+                    )
+                })
 
             ButtonGray(
-                label = "AVATAR LIST",
+                label = "",
                 onClick = { },
-                modifier = Modifier.width(350.dp)
-            )
-
-            ButtonGray(
-                label = "GOOGLE REPOS",
-                onClick = { },
-                modifier = Modifier.width(350.dp)
+                modifier = Modifier
+                    .width(40.dp)
+                    .height(40.dp)
+                    .align(alignment = Alignment.CenterEnd)
+                    .offset(x = 48.dp, y = 8.dp)
             )
         }
+
+        ButtonGray(
+            label = "AVATAR LIST",
+            onClick = { },
+            modifier = Modifier
+                .width(250.dp)
+                .padding(top = 12.dp)
+        )
+
+        ButtonGray(
+            label = "GOOGLE REPOS",
+            onClick = { },
+            modifier = Modifier
+                .width(250.dp)
+                .padding(top = 12.dp)
+        )
     }
 }
 
@@ -116,13 +127,17 @@ fun ButtonGray(
 ) {
     Box(
         modifier = modifier
-            .padding(6.dp)
             .background(Color(0xFFD6D7D7))
             .padding(13.dp),
         contentAlignment = Alignment.Center
 
     ) {
-        Text(label)
+        Text(
+            text = label,
+            modifier = Modifier.fillMaxWidth(),
+            fontSize = 13.sp,
+            textAlign = TextAlign.Center
+        )
         if (label.isEmpty()) {
             Icon(imageVector = Icons.Default.Search, contentDescription = null)
         }
@@ -137,6 +152,8 @@ fun ButtonGrayPreview() {
 
 @Preview(showSystemUi = true)
 @Composable
-private fun HomePreview() {
-    RandomEmoji()
+private fun RandomEmojiPreview() {
+    MyApplicationTheme {
+        RandomEmojiScreen()
+    }
 }
