@@ -45,21 +45,6 @@ fun RandomEmoji(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Image(
-            imageVector = Icons.Default.Star, contentDescription = ""
-        )
-
-        ButtonGray(
-            label = "RANDOM EMOJI",
-            onClick = { },
-            modifier = Modifier.width(160.dp)
-        )
-
-        ButtonGray(
-            label = "EMOJI LIST",
-            onClick = { },
-            modifier = Modifier.width(160.dp)
-        )
 
         Column(
             modifier = Modifier
@@ -69,11 +54,29 @@ fun RandomEmoji(
             verticalArrangement = Arrangement.Center
         ) {
 
+            Image(
+                imageVector = Icons.Default.Star, contentDescription = ""
+            )
+
+            ButtonGray(
+                label = "RANDOM EMOJI",
+                onClick = { },
+                modifier = Modifier.width(160.dp)
+            )
+
+            ButtonGray(
+                label = "EMOJI LIST",
+                onClick = { },
+                modifier = Modifier.width(160.dp)
+            )
+
             Row {
                 TextField(
                     value = "",
                     onValueChange = {},
-                    modifier = Modifier.weight(4f),
+                    modifier = Modifier
+                        .weight(4f)
+                        .width(350.dp),
                     colors = TextFieldDefaults.colors(
                         unfocusedContainerColor = Color.Transparent
                     ),
@@ -92,13 +95,13 @@ fun RandomEmoji(
             ButtonGray(
                 label = "AVATAR LIST",
                 onClick = { },
-                modifier = Modifier.width(200.dp)
+                modifier = Modifier.width(350.dp)
             )
 
             ButtonGray(
                 label = "GOOGLE REPOS",
                 onClick = { },
-                modifier = Modifier.width(200.dp)
+                modifier = Modifier.width(350.dp)
             )
         }
     }
@@ -129,7 +132,7 @@ fun ButtonGray(
 @Composable
 @Preview
 fun ButtonGrayPreview() {
-    ButtonGray("RANDOM EMOJO", {})
+    ButtonGray("RANDOM EMOJi", {})
 }
 
 @Preview(showSystemUi = true)

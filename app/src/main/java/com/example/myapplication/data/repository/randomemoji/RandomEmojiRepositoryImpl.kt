@@ -27,7 +27,7 @@ class RandomEmojiRepositoryImpl(
 //                })
 //            }
 //        }
-//        val result = httpClient.get("https://api.github.com/emojis").body<EmojisResponse>()
+//        val result = httpClient.get("https://api.github.com/emojis").body<Map<String, String>>()
 //        Log.d("STATUS_REQUEST", "getList: ${result}")
         return EmojisResponse()
     }
