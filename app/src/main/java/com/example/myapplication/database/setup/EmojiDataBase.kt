@@ -6,6 +6,6 @@ import com.example.myapplication.database.dao.EmojiDao
 import com.example.myapplication.database.entity.Emoji
 
 @Database(entities = [Emoji::class], version = 1)
-abstract class ConfigRoom : RoomDatabase() {
-    abstract fun userDao(): EmojiDao
+abstract class EmojiDataBase : RoomDatabase() {
+    abstract fun emojiDao(): EmojiDao
 }
