@@ -1,7 +1,9 @@
 package com.example.myapplication.data.datasource.randomemoji
 
-class RandomEmojiDataSourceImpl : RandomEmojiDataSource {
-    override fun getList() {
+import com.example.myapplication.data.datasource.EmojisResponse
 
+class RandomEmojiDataSourceImpl : RandomEmojiDataSource {
+    override fun getList(): EmojisResponse {
+        return EmojisResponse()
     }
 }

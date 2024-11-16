@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -12,23 +13,30 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Star
-import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.myapplication.presentation.theme.BlueEmoji
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun RandomEmoji(
-    modifier: Modifier = Modifier.background(BlueEmoji)
+    modifier: Modifier = Modifier.background(BlueEmoji),
 ) {
+    val viewModel: RandomEmojiViewModel = koinViewModel()
+
+    LaunchedEffect(Unit) {
+        viewModel.teste()
+    }
+
     Column(
         modifier = modifier
             .fillMaxWidth()
@@ -43,7 +51,7 @@ fun RandomEmoji(
 
         ButtonGray(
             label = "RANDOM EMOJI",
-            onClick = {  },
+            onClick = { },
             modifier = Modifier.width(160.dp)
         )
 
@@ -61,13 +69,25 @@ fun RandomEmoji(
             verticalArrangement = Arrangement.Center
         ) {
 
-            TextField(
-                value = "Insert github username",
-                onValueChange = {},
-                leadingIcon = {
-                    Icon(imageVector = Icons.Default.Search, contentDescription = null)
-                }
-            )
+            Row {
+                TextField(
+                    value = "",
+                    onValueChange = {},
+                    modifier = Modifier.weight(4f),
+                    colors = TextFieldDefaults.colors(
+                        unfocusedContainerColor = Color.Transparent
+                    ),
+                    placeholder = {
+                        Text(text = "insert github username", color = Color.Red)
+                    }
+                )
+                ButtonGray(
+                    label = "",
+                    onClick = { },
+                    modifier = Modifier.weight(1f)
+                )
+            }
+
 
             ButtonGray(
                 label = "AVATAR LIST",
@@ -86,10 +106,11 @@ fun RandomEmoji(
 
 @Composable
 fun ButtonGray(
-    label:String,
+    label: String,
     onClick: () -> Unit,
-    modifier: Modifier = Modifier
-){
+    modifier: Modifier = Modifier,
+    content: @Composable () -> Unit = {},
+) {
     Box(
         modifier = modifier
             .padding(6.dp)
@@ -97,14 +118,17 @@ fun ButtonGray(
             .padding(13.dp),
         contentAlignment = Alignment.Center
 
-    ){
+    ) {
         Text(label)
+        if (label.isEmpty()) {
+            Icon(imageVector = Icons.Default.Search, contentDescription = null)
+        }
     }
 }
 
 @Composable
 @Preview
-fun ButtonGrayPreview(){
+fun ButtonGrayPreview() {
     ButtonGray("RANDOM EMOJO", {})
 }
 
