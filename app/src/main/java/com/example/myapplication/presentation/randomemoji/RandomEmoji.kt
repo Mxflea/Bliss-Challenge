@@ -20,6 +20,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.myapplication.presentation.theme.BlueEmoji
@@ -46,12 +47,11 @@ fun RandomEmoji(
             modifier = Modifier.width(160.dp)
         )
 
-        Button(
-            onClick = { TODO() },
+        ButtonGray(
+            label = "EMOJI LIST",
+            onClick = { },
             modifier = Modifier.width(160.dp)
-        ) {
-            Text(text = "EMOJI LIST")
-        }
+        )
 
         Column(
             modifier = Modifier
@@ -69,19 +69,17 @@ fun RandomEmoji(
                 }
             )
 
-            Button(
-                onClick = { TODO() },
+            ButtonGray(
+                label = "AVATAR LIST",
+                onClick = { },
                 modifier = Modifier.width(200.dp)
-            ) {
-                Text(text = "AVATAR LIST")
-            }
+            )
 
-            Button(
-                onClick = { TODO() },
+            ButtonGray(
+                label = "GOOGLE REPOS",
+                onClick = { },
                 modifier = Modifier.width(200.dp)
-            ) {
-                Text(text = "GOOGLE REPOS")
-            }
+            )
         }
     }
 }
@@ -92,8 +90,15 @@ fun ButtonGray(
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ){
-    Box(modifier = modifier.background(Color(0xFFD6D7D7))){
-        Text("RANDOM EMOJI")
+    Box(
+        modifier = modifier
+            .padding(6.dp)
+            .background(Color(0xFFD6D7D7))
+            .padding(13.dp),
+        contentAlignment = Alignment.Center
+
+    ){
+        Text(label)
     }
 }
 
