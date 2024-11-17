@@ -1,8 +1,7 @@
 package com.example.myapplication.data.datasource.emoji
 
-import android.util.Log
 import com.example.myapplication.data.datasource.AvatarsResponse
-import com.example.myapplication.data.model.Emoji
+import com.example.myapplication.data.model.EmojiDto
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.android.Android
@@ -24,10 +23,10 @@ class EmojiDataSourceImpl : EmojiDataSource {
         return AvatarsResponse()
     }
 
-    override suspend fun getList(): List<Emoji> {
+    override suspend fun getList(): List<EmojiDto> {
         val result = request<Map<String, String>>(EMOJIS_END_POINT)
         return result.entries.map { result ->
-            Emoji(
+            EmojiDto(
                 name = result.key,
                 url = result.value
             )

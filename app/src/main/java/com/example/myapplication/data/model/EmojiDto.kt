@@ -1,6 +1,6 @@
 package com.example.myapplication.data.model
 
-data class Emoji(
+data class EmojiDto(
     val name:String = "",
     val url:String = ""
 )

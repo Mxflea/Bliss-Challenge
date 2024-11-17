@@ -2,7 +2,7 @@ package com.example.myapplication.presentation.randomemoji
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.myapplication.data.model.Emoji
+import com.example.myapplication.data.model.EmojiDto
 import com.example.myapplication.data.repository.randomemoji.RandomEmojiRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
@@ -29,5 +29,5 @@ class RandomEmojiViewModel(
 
 
 data class RandomEmojiUiState(
-    val emojiList: List<Emoji> = emptyList()
+    val emojiList: List<EmojiDto> = emptyList()
 )
