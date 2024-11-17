@@ -3,7 +3,6 @@ package com.example.myapplication.database.dao
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.myapplication.data.model.EmojiDto
 import com.example.myapplication.database.entity.EmojiDb
 
 @Dao

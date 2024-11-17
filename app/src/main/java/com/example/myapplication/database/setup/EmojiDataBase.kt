@@ -5,7 +5,7 @@ import androidx.room.RoomDatabase
 import com.example.myapplication.database.dao.EmojiDao
 import com.example.myapplication.database.entity.EmojiDb
 
-@Database(entities = [EmojiDb::class], version = 1)
+@Database(entities = [EmojiDb::class], version = 2)
 abstract class EmojiDataBase : RoomDatabase() {
     abstract fun emojiDao(): EmojiDao
 }
