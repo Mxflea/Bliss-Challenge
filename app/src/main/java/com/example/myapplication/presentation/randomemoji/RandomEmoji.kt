@@ -32,6 +32,7 @@ import com.example.myapplication.presentation.theme.MyApplicationTheme
 fun RandomEmojiScreen(
     uiState: RandomEmojiUiState = RandomEmojiUiState(),
     modifier: Modifier = Modifier.background(BlueEmoji),
+    navegateTo: () -> Unit = {}
 ) {
 
     val list = emptyList<String>()
@@ -57,7 +58,7 @@ fun RandomEmojiScreen(
 
         ButtonGray(
             label = if (list.isNotEmpty()) "RANDOM EMOJI" else "GET EMOJI",
-            onClick = { },
+            onClick = {  },
             modifier = Modifier
                 .width(160.dp)
                 .padding(top = 12.dp)
@@ -65,7 +66,7 @@ fun RandomEmojiScreen(
 
         ButtonGray(
             label = "EMOJI LIST",
-            onClick = { },
+            onClick = { navegateTo() },
             modifier = Modifier
                 .width(160.dp)
                 .padding(top = 12.dp)

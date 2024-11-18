@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import com.example.myapplication.presentation.emojilist.navigateToEmojiListScreen
 import com.example.myapplication.presentation.randomemoji.RandomEmojiScreen
 import com.example.myapplication.presentation.randomemoji.navigateToRandomEmoji
 import com.example.myapplication.presentation.theme.MyApplicationTheme
@@ -29,8 +30,9 @@ fun App() {
 
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = "random_emoji"){
-        navigateToRandomEmoji()
+    NavHost(navController = navController, startDestination = EmojiRandom){
+        navigateToRandomEmoji(navegateTo = {navController.navigate(EmojiList)})
+        navigateToEmojiListScreen()
     }
 
 }

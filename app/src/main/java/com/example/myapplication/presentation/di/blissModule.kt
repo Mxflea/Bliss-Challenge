@@ -5,6 +5,7 @@ import com.example.myapplication.data.datasource.emoji.EmojiDataSourceImpl
 import com.example.myapplication.data.repository.randomemoji.RandomEmojiRepository
 import com.example.myapplication.data.repository.randomemoji.RandomEmojiRepositoryImpl
 import com.example.myapplication.presentation.randomemoji.RandomEmojiViewModel
+import com.example.myapplication.presentation.emojilist.EmojiListScreenViewModel
 import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.singleOf
 import org.koin.core.module.dsl.viewModelOf
@@ -14,6 +15,7 @@ val blissModule = module {
     singleOf(::RandomEmojiRepositoryImpl) { bind<RandomEmojiRepository>() }
     singleOf(::EmojiDataSourceImpl) { bind<EmojiDataSource>() }
     viewModelOf(::RandomEmojiViewModel)
+    viewModelOf(::EmojiListScreenViewModel)
 
     singleOf(::RandomEmojiRepositoryImpl) { bind<RandomEmojiRepository>() }
 }

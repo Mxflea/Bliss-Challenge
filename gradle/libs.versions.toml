@@ -8,7 +8,11 @@ espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.9.3"
 composeBom = "2024.11.00"
+<<<<<<< Updated upstream
 navigationCompose = "2.8.4"
+=======
+navigationCompose = "2.8.3"
+>>>>>>> Stashed changes
 serialization = "1.7.3"
 coilCompose = "2.5.0"
 ktorVersion = "3.0.0"
