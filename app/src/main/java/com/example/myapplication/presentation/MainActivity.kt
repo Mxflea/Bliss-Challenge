@@ -31,7 +31,9 @@ fun App() {
     val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = EmojiRandom){
-        navigateToRandomEmoji(navegateTo = {navController.navigate(EmojiList)})
+        navigateToRandomEmoji(navegateTo = {
+            navController.navigate(EmojiList)
+        })
         navigateToEmojiListScreen()
     }
 

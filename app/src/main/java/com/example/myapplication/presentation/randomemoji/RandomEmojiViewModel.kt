@@ -20,14 +20,28 @@ class RandomEmojiViewModel(
         viewModelScope.launch {
             val result = repository.getList()
             _uiState.update { uiState ->
-                uiState.copy(emojiList = result)
+                uiState.copy(
+                    emojiList = result,
+                    radonEmoji =  if (result.isNotEmpty()) {
+                        result.random().url
+                    } else {
+                        ""
+                    }
+                )
             }
         }
     }
 
+    fun changeEmoji() {
+        _uiState.update { uiState ->
+            uiState.copy(
+                radonEmoji = uiState.emojiList.random().url
+            )
+        }
+    }
 }
 
-
 data class RandomEmojiUiState (
-    val emojiList: List<EmojiDto> = emptyList()
+    val emojiList: List<EmojiDto> = emptyList(),
+    val radonEmoji: String = ""
 )

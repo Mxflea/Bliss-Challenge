@@ -16,6 +16,9 @@ fun NavGraphBuilder.navigateToRandomEmoji(
             uiState = uiState,
             navegateTo = {
                 navegateTo()
+            },
+            clickRadomEmoji = {
+                viewModel.changeEmoji()
             }
         )
     }

@@ -1,6 +1,7 @@
 package com.example.myapplication.presentation.randomemoji
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -32,10 +33,10 @@ import com.example.myapplication.presentation.theme.MyApplicationTheme
 fun RandomEmojiScreen(
     uiState: RandomEmojiUiState = RandomEmojiUiState(),
     modifier: Modifier = Modifier.background(BlueEmoji),
-    navegateTo: () -> Unit = {}
+    navegateTo: () -> Unit = {},
+    clickRadomEmoji: () -> Unit = {},
 ) {
 
-    val list = emptyList<String>()
 
     Column(
         modifier = modifier
@@ -47,27 +48,31 @@ fun RandomEmojiScreen(
     ) {
 
         AsyncImage(
-            model = if (uiState.emojiList.isNotEmpty()) {
-                uiState.emojiList.random().url
-            } else {
-                ""
-            },
-            modifier = Modifier.width(80.dp),
+            model = uiState.radonEmoji,
+            modifier = Modifier
+                .width(80.dp)
+                .height(40.dp),
             contentDescription = null,
         )
 
         ButtonGray(
-            label = if (list.isNotEmpty()) "RANDOM EMOJI" else "GET EMOJI",
-            onClick = {  },
+            label = if (uiState.emojiList.isNotEmpty()) {
+                "RANDOM EMOJI"
+            } else {
+                "GET EMOJI"
+            },
+            onClick = {
+                clickRadomEmoji()
+            },
             modifier = Modifier
                 .width(160.dp)
                 .padding(top = 12.dp)
         )
 
         ButtonGray(
-            label = "EMOJI LIST",
-            onClick = { navegateTo() },
-            modifier = Modifier
+            label = "EMOJI LIST", onClick = {
+                navegateTo()
+            }, modifier = Modifier
                 .width(160.dp)
                 .padding(top = 12.dp)
         )
@@ -77,18 +82,13 @@ fun RandomEmojiScreen(
                 .width(250.dp)
                 .padding(top = 12.dp),
         ) {
-            TextField(value = "",
-                onValueChange = {},
-                colors = TextFieldDefaults.colors(
-                    unfocusedContainerColor = Color.Transparent
-                ),
-                placeholder = {
-                    Text(
-                        text = "insert github username",
-                        fontSize = 12.sp,
-                        color = Color.Red
-                    )
-                })
+            TextField(value = "", onValueChange = {}, colors = TextFieldDefaults.colors(
+                unfocusedContainerColor = Color.Transparent
+            ), placeholder = {
+                Text(
+                    text = "insert github username", fontSize = 12.sp, color = Color.Red
+                )
+            })
 
             ButtonGray(
                 label = "",
@@ -129,6 +129,9 @@ fun ButtonGray(
     Box(
         modifier = modifier
             .background(Color(0xFFD6D7D7))
+            .clickable {
+                onClick()
+            }
             .padding(13.dp),
         contentAlignment = Alignment.Center
 
