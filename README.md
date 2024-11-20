@@ -2,7 +2,7 @@
 Uma aplicação Android desenvolvida como parte de um desafio técnico para a vaga de Desenvolvedor Android Jr. O objetivo é criar um aplicativo que realiza uma consulta em uma API de Emojis e uma de Avatar do GitHub. O desafio consiste em criar um botão que traz um emoji aleatório a tela, um botão que retornar uma lista com todos os emojis, um campo de busca que traz o avatar de acordo com o usuário digitado, um botão que retornar uma lista de Avatars e um botão que traz um lista com todos os Google Repos.
 
 ## :camera_flash: Screenshots
-<img ![Imagem do WhatsApp de 2024-11-20 à(s) 15 47 48_5c52ca8e](https://github.com/user-attachments/assets/ec5ec55e-6ebf-40ed-86dd-061796342008) width="260">&emsp;<img ![Imagem do WhatsApp de 2024-11-20 à(s) 15 47 48_3d0a7e14](https://github.com/user-attachments/assets/88aaaefe-09dc-4f8a-a71d-d2836b6596e8) width="260">
+![Imagem do WhatsApp de 2024-11-20 à(s) 15 47 48_5c52ca8e](https://github.com/user-attachments/assets/ec5ec55e-6ebf-40ed-86dd-061796342008)&emsp;![Imagem do WhatsApp de 2024-11-20 à(s) 15 47 48_3d0a7e14](https://github.com/user-attachments/assets/88aaaefe-09dc-4f8a-a71d-d2836b6596e8)
 
 
 ## :hammer_and_wrench: Tecnologias
