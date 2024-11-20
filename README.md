@@ -13,7 +13,7 @@ Uma aplicação Android desenvolvida como parte de um desafio técnico para a va
     * Ktor para consumo de APIs
     * Room para persistência de dados
     * Koin para injeção de dependências (se aplicável)
-    * Navegate para nevegação entre telas
+    * Navigation para nevegação entre telas
  
 ## :rocket: Funcionalidades
 * **Random Emoji:** Um emoji aleatório é mostrado na tela inicial do aplicatico sempre que o botão "Random Emoji" é clicado.
