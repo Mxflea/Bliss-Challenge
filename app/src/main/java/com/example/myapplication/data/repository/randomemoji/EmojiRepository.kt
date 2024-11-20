@@ -1,7 +1,7 @@
-package com.example.myapplication.data.repository.emojilist
+package com.example.myapplication.data.repository.randomemoji
 
 import com.example.myapplication.data.model.EmojiDto
 
-interface EmojiListRepository {
+interface EmojiRepository {
     suspend fun getList(): List<EmojiDto>
 }

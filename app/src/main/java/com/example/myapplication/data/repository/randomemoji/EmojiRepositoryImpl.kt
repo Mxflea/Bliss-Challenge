@@ -5,10 +5,10 @@ import com.example.myapplication.data.model.EmojiDto
 import com.example.myapplication.database.dao.EmojiDao
 import com.example.myapplication.database.entity.EmojiDb
 
-class RandomEmojiRepositoryImpl(
+class EmojiRepositoryImpl(
     private val dataSource: EmojiDataSource,
     private val dao: EmojiDao
-) : RandomEmojiRepository {
+) : EmojiRepository {
 
     override suspend fun getList():List<EmojiDto>{
        return if(dao.getAll().isNotEmpty()){

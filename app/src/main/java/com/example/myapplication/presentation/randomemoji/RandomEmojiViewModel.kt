@@ -3,13 +3,13 @@ package com.example.myapplication.presentation.randomemoji
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.myapplication.data.model.EmojiDto
-import com.example.myapplication.data.repository.randomemoji.RandomEmojiRepository
+import com.example.myapplication.data.repository.randomemoji.EmojiRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class RandomEmojiViewModel(
-    private val repository: RandomEmojiRepository,
+    private val repository: EmojiRepository,
 ) : ViewModel() {
 
     private var _uiState: MutableStateFlow<RandomEmojiUiState> =

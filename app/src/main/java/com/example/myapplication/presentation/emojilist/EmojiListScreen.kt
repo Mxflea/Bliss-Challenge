@@ -83,21 +83,7 @@ fun EmojiListScreen(
             )
         }
     )
-
-//    FlowRow(
-//        modifier = Modifier
-//            .fillMaxWidth(),
-//        maxItemsInEachRow = 4,
-//    ) {
-//        val emojis = uiState.emojiList.forEach {
-//            AsyncImage(
-//                model = it.url,
-//                contentDescription = "",
-//            )
-//        }
-//
-//        emojis
-//    }
+    
 }
 
 @Preview(showSystemUi = true)
