@@ -15,27 +15,27 @@ Uma aplicação Android desenvolvida como parte de um desafio técnico para a va
     * Koin para injeção de dependências (se aplicável)
     * Navegate para nevegação entre telas
  
-:rocket: ## Funcionalidades
+## :rocket: Funcionalidades
 * **Random Emoji:** Um emoji aleatório é mostrado na tela inicial do aplicatico sempre que o botão "Random Emoji" é clicado.
 * **Emoji List:** Uma lista de emojis é carregada na tela sempre que o botão "Random Emoji" é clicado.
 
-:open_file_folder: ## Estrutura do Projeto
+## :open_file_folder: Estrutura do Projeto
 
-'''
+```
 /app
   /data            -> Camada de dados
   /database        -> Camada de configuração do banco de dados
   /presentation    -> Camada de apresentação
-'''
+````
 :package: ## Estrutura do Projeto
 
 1. Clone o repositório:
-"""
+```
 git clone https://github.com/Mxflea/Bliss-Challenge.git
-"""
-2. Abra o projeto no Android Studio.
-3. Baixe as dependências do Gradle.
-4. Execute o aplicativo no emulador ou dispositivo físico.
+```
+3. Abra o projeto no Android Studio.
+4. Baixe as dependências do Gradle.
+5. Execute o aplicativo no emulador ou dispositivo físico.
 
 :pencil: ## Testes
 * Testes ainda não realizados.
