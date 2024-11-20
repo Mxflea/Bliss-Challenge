@@ -5,6 +5,9 @@ Uma aplicação Android desenvolvida como parte de um desafio técnico para a va
 <!-- You can add more screenshots here if you like -->
 <img src="/result/Screenshot_20230217_015921.png" width="260">&emsp;<img src="/result/Screenshot_20230217_020035.png" width="260">&emsp;<img src="/result/Screenshot_20230217_020117.png" width="260">
 
+![Imagem do WhatsApp de 2024-11-20 à(s) 15 47 48_3d0a7e14](https://github.com/user-attachments/assets/88aaaefe-09dc-4f8a-a71d-d2836b6596e8)
+
+
 ## :hammer_and_wrench: Tecnologias
 * **Linguagem:** Kotlin
 * **Arquitetura:** MVVM e Koin
