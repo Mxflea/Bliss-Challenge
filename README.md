@@ -5,7 +5,7 @@ Uma aplicação Android desenvolvida como parte de um desafio técnico para a va
 <!-- You can add more screenshots here if you like -->
 <img src="/result/Screenshot_20230217_015921.png" width="260">&emsp;<img src="/result/Screenshot_20230217_020035.png" width="260">&emsp;<img src="/result/Screenshot_20230217_020117.png" width="260">
 
-:hammer_and_wrench: ## Tecnologias
+## :hammer_and_wrench: Tecnologias
 * **Linguagem:** Kotlin
 * **Arquitetura:** MVVM e Koin
 * **Bibliotecas utilizadas:**
