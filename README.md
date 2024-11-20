@@ -27,7 +27,7 @@ Uma aplicação Android desenvolvida como parte de um desafio técnico para a va
   /database        -> Camada de configuração do banco de dados
   /presentation    -> Camada de apresentação
 ````
-:package: ## Estrutura do Projeto
+## :package: Estrutura do Projeto
 
 1. Clone o repositório:
 ```
@@ -37,14 +37,14 @@ git clone https://github.com/Mxflea/Bliss-Challenge.git
 4. Baixe as dependências do Gradle.
 5. Execute o aplicativo no emulador ou dispositivo físico.
 
-:pencil: ## Testes
+## :pencil: Testes
 * Testes ainda não realizados.
 
-:bulb: ## Melhorias Futuras
+## :bulb: Melhorias Futuras
 * Melhorar a interface do usuário.
 * Habilitar o campo de busca de Avatar por usuário do GitHub.
 * Habilitar o botão "Avatar List".
 * Habiilitar o botão "Google Repos".
 
-:scroll: ## Licença
+## :scroll: Licença
 Projeto realziado para fins de avaliação.
