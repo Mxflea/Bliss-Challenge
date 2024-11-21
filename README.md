@@ -12,7 +12,7 @@ Uma aplicação Android desenvolvida como parte de um desafio técnico para a va
     * Jetpack Compose
     * Ktor para consumo de APIs
     * Room para persistência de dados
-    * Koin para injeção de dependências (se aplicável)
+    * Koin para injeção de dependências
     * Navigation para nevegação entre telas
  
 ## :rocket: Funcionalidades
