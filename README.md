@@ -47,4 +47,4 @@ git clone https://github.com/Mxflea/Bliss-Challenge.git
 * Habiilitar o botão "Google Repos".
 
 ## :scroll: Licença
-Projeto realziado para fins de avaliação.
+Projeto realizado para fins de avaliação.
